@@ -78,7 +78,7 @@ Reglas de estilo obligatorias
 - Usa TypeScript para todo el código (no introducir archivos .js para lógica nueva).
 - Preferir componentes funcionales y React hooks en lugar de clases.
 - Usar PascalCase para nombres de componentes (MyComponent).
-- Anotar componentes con `React.FC` cuando se requiera una firma explícita.
+- Anotar componentes con el tipo FC usando type-only import desde React (p. ej., `import type { FC } from 'react'` o `import { type FC } from 'react'`); evitar `React.FC` salvo casos heredados.
 - Exportar como `default` cuando el archivo tiene una sola exportación; usar named exports para utilidades y hooks.
 - Preferir `const` sobre `let` salvo necesidad de reasignación.
 - Colocar componentes en `src/components/`, hooks en `src/hooks/`, utilidades en `src/lib/` y tipos en `src/types/` o co-localizarlos con el componente.
