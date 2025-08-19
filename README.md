@@ -1,12 +1,14 @@
 # Web Designer Project
 
-A modern web designer platform built with Next.js 15, TypeScript, and Tailwind CSS. This project provides a comprehensive foundation for building sophisticated web design tools and interfaces.
+A modern web designer platform built with Next.js 15, TypeScript, Tailwind CSS, and shadcn/ui. This project provides a comprehensive foundation for building sophisticated web design tools and interfaces with beautiful, accessible UI components.
 
 ## 🚀 Technology Stack
 
 - **Framework**: Next.js 15 with App Router
 - **Language**: TypeScript
+- **UI Components**: shadcn/ui (new-york style, neutral theme)
 - **Styling**: Tailwind CSS v4
+- **Theming**: next-themes (dark/light mode)
 - **Package Manager**: pnpm
 - **Linting**: ESLint with Next.js config
 - **Runtime**: React 19
@@ -14,8 +16,10 @@ A modern web designer platform built with Next.js 15, TypeScript, and Tailwind C
 ## ✨ Features
 
 - ⚡ Next.js 15 with Turbopack for blazing fast development
-- 🎨 Tailwind CSS v4 for modern, utility-first styling
+- 🎨 shadcn/ui components with modern design system
+- 🌙 Dark/Light mode support with next-themes
 - 📱 Fully responsive design
+- ♿ Accessible components built on Radix UI
 - 🔧 TypeScript for type safety
 - 🎯 ESLint configuration for code quality
 - 📁 Well-organized project structure
@@ -50,6 +54,69 @@ pnpm dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🎨 shadcn/ui Components
+
+This project uses shadcn/ui for consistent, accessible UI components. The setup includes:
+
+### Current Configuration
+
+- **Style**: new-york
+- **Base Color**: neutral
+- **CSS Variables**: enabled
+- **TypeScript**: enabled
+- **Theme Support**: dark/light mode with next-themes
+
+### Installed Components
+
+- `button` - Buttons with multiple variants (default, outline, ghost, etc.)
+- `card` - Card components with header, content, and description
+- `input` - Form input fields
+- `label` - Form labels
+
+### Adding New Components
+
+To add a new shadcn/ui component:
+
+```bash
+# Install a specific component
+pnpm dlx shadcn@latest add dialog
+
+# Install multiple components
+pnpm dlx shadcn@latest add dropdown-menu tooltip select
+
+# See all available components
+pnpm dlx shadcn@latest add
+```
+
+### Usage Examples
+
+```tsx
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
+export default function Example() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Example Card</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Button variant="outline">Click me</Button>
+      </CardContent>
+    </Card>
+  );
+}
+```
+
+### Theming
+
+The project includes automatic dark/light mode switching:
+
+```tsx
+// Theme is automatically applied via ThemeProvider in layout.tsx
+// Components automatically adapt to the current theme
+```
 
 ## 📁 Project Structure
 

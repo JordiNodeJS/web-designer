@@ -1,17 +1,17 @@
 {
-    "recommendations": [
-        "bradlc.vscode-tailwindcss",
-        "esbenp.prettier-vscode",
-        "ms-vscode.vscode-typescript-next",
-        "PKief.material-icon-theme",
-        "usernamehw.errorlens",
-        "ms-vscode.vscode-json",
-        "bradlc.vscode-tailwindcss",
-        "formulahendry.auto-rename-tag",
-        "christian-kohler.path-intellisense",
-        "ms-vscode.vscode-eslint",
-        "oderwat.indent-rainbow",
-        "GitHub.copilot",
-        "GitHub.copilot-chat"
-    ]
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "PKief.material-icon-theme",
+    "usernamehw.errorlens",
+    "ms-vscode.vscode-json",
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-eslint",
+    "oderwat.indent-rainbow",
+    "GitHub.copilot",
+    "GitHub.copilot-chat"
+  ]
 }
