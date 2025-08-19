@@ -1,4 +1,4 @@
-# Instrucciones para agentes de IA (Copilot) - web-designer-project
+# Instrucciones para agentes de IA (Copilot) - web-designer
 
 Propósito: proporcionar contexto específico del repositorio para que un agente de Copilot trabaje de forma segura y eficiente en este proyecto Next.js + TypeScript.
 
@@ -6,7 +6,7 @@ Propósito: proporcionar contexto específico del repositorio para que un agente
 
 Resumen del repositorio
 
-- Nombre: `web-designer-project`.
+- Nombre: `web-designer`.
 - Propósito: aplicación web frontend basada en Next.js para diseño/visualización (UI components bajo `src/components`).
 - Tipo: monorepo pequeño/único paquete: Next.js (app router), TypeScript, React, Tailwind CSS.
 - Tamaño: pequeño/mediano (estructura simple, pocos paquetes).

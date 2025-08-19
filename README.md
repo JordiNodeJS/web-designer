@@ -25,23 +25,26 @@ A modern web designer platform built with Next.js 15, TypeScript, and Tailwind C
 
 ### Prerequisites
 
-- Node.js 18.18+ 
+- Node.js 18.18+
 - pnpm (recommended) or npm/yarn
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
-cd web-designer-project
+cd web-designer
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 3. Run the development server:
+
 ```bash
 pnpm dev
 ```
@@ -51,7 +54,7 @@ pnpm dev
 ## 📁 Project Structure
 
 ```
-web-designer-project/
+web-designer/
 ├── src/
 │   ├── app/                 # Next.js App Router pages
 │   ├── components/          # Reusable UI components
@@ -123,15 +126,18 @@ This project uses Tailwind CSS v4 for styling:
 ## 📚 Learn More
 
 ### Next.js Resources
+
 - [Next.js Documentation](https://nextjs.org/docs)
 - [App Router Guide](https://nextjs.org/docs/app)
 - [Next.js Examples](https://github.com/vercel/next.js/tree/canary/examples)
 
 ### Tailwind CSS
+
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Tailwind UI Components](https://tailwindui.com)
 
 ### TypeScript
+
 - [TypeScript Handbook](https://www.typescriptlang.org/docs)
 - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app)
 
