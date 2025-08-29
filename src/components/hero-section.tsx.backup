@@ -1,0 +1,168 @@
+'use client';
+
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import { HoverEffect } from '@/components/ui/hover-effect';
+import {
+  TextReveal,
+  StaggerContainer,
+} from '@/components/ui/micro-animations';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+export function HeroSection() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    let rafId: number | null = null;
+
+    const onScroll = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        setScrollY(window.scrollY || window.pageYOffset || 0);
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, []);
+
+  const scrollIndicatorOpacity = Math.max(0, 1 - scrollY / 200);
+  const scrollTextOpacity = scrollIndicatorOpacity; // same value, but we'll add a visual delay via CSS
+
+  return (
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
+      {/* Fondo con gradiente sutil */}
+      <div className="from-background via-background/95 to-primary/5 absolute inset-0 bg-gradient-to-br" />
+
+      <div className="relative z-10 container mx-auto text-center">
+        <StaggerContainer className="space-y-8">
+          {/* Main heading mejorado para legibilidad */}
+          <TextReveal
+            text="creamos experiencias digitales memorables"
+            className="font-display text-4xl leading-tight font-bold md:text-6xl lg:text-7xl"
+            delay={0.3}
+            staggerDelay={0.02}
+          />
+
+          {/* iconos removidos para mejorar legibilidad */}
+
+          {/* Subtitle con animación letra por letra */}
+          <div className="space-y-4">
+            <TextReveal
+              className="font-display letter-spacing-wider text-sm opacity-70"
+              delay={0.6}
+              stagger={0.03}
+            >
+              HOLA
+            </TextReveal>
+
+            <div className="mx-auto max-w-4xl space-y-2">
+              <TextReveal
+                className="letter-spacing-wide text-sm font-medium md:text-base"
+                delay={0.7}
+                stagger={0.008}
+              >
+                SOMOS WEB DESIGNER, UN ESTUDIO CREANDO
+              </TextReveal>
+              <TextReveal
+                className="letter-spacing-wide text-sm font-medium md:text-base"
+                delay={0.9}
+                stagger={0.008}
+              >
+                EXPERIENCIAS E-COMMERCE Y WEB MEMORABLES,
+              </TextReveal>
+              <TextReveal
+                className="letter-spacing-wide text-sm font-medium md:text-base"
+                delay={1.05}
+                stagger={0.008}
+              >
+                ESPECIALIZADOS EN ESTRATEGIA DIGITAL, UX, UI,
+              </TextReveal>
+              <TextReveal
+                className="letter-spacing-wide text-sm font-medium md:text-base"
+                delay={1.2}
+                stagger={0.008}
+              >
+                Y DESARROLLO MODERNO.
+              </TextReveal>
+            </div>
+          </div>
+
+          {/* CTA Buttons con efectos mejorados */}
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <HoverEffect effect="lift" intensity="strong">
+              <Button
+                asChild
+                size="lg"
+                className="letter-spacing-wide group font-medium"
+              >
+                <Link href="/calculadora" className="flex items-center gap-2">
+                  Calcular Presupuesto
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </HoverEffect>
+            <HoverEffect effect="glow" intensity="medium">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="letter-spacing-wide font-medium"
+              >
+                <Link href="/servicios">Ver Servicios</Link>
+              </Button>
+            </HoverEffect>
+          </div>
+
+          {/* Scroll indicator mejorado */}
+          <div className="mt-16">
+            <div
+              className="mx-auto flex h-10 w-6 justify-center rounded-full border-2 border-current"
+              style={{ opacity: scrollIndicatorOpacity }}
+            >
+              <div className="mt-2 h-3 w-1 animate-pulse rounded-full bg-current"></div>
+            </div>
+            <div
+              style={{
+                opacity: scrollTextOpacity,
+                transition: 'opacity 0.28s ease',
+                transitionDelay: '0.12s',
+              }}
+              className="mt-2"
+            >
+              <TextReveal
+                className="letter-spacing-wider text-xs"
+                delay={1.6}
+                stagger={0.06}
+              >
+                SCROLL
+              </TextReveal>
+            </div>
+          </div>
+        </StaggerContainer>
+      </div>
+
+      {/* Elementos decorativos con animación de brisa */}
+      <div className="animate-float-gentle absolute top-20 left-10 opacity-20">
+        <div className="bg-primary/20 animate-breathe h-20 w-20 rounded-full blur-xl" />
+      </div>
+
+      <div className="animate-float-gentle-delayed absolute right-10 bottom-20 opacity-20">
+        <div className="bg-secondary/20 animate-breathe-slow h-32 w-32 rounded-full blur-xl" />
+      </div>
+
+      {/* Sombras adicionales con efecto de brisa */}
+      <div className="animate-drift-left absolute top-1/3 right-1/4 opacity-10">
+        <div className="bg-accent/30 h-16 w-16 rounded-full blur-2xl" />
+      </div>
+
+      <div className="animate-drift-right absolute bottom-1/3 left-1/4 opacity-15">
+        <div className="bg-primary/25 h-24 w-24 rounded-full blur-2xl" />
+      </div>
+    </section>
+  );
+}
